@@ -17,7 +17,7 @@
     <h1>Weather Dashboard</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-4">
                 <h2>Search for a City:</h2>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control col-md-5" id="cityInput" aria-label="Default"
@@ -28,50 +28,111 @@
 
                 </ul>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-8">
                 <!-- forecast -->
                 <div class='.container-fluid'>
+
                     <div class='row'>
                         <!--current weather-->
-                        <div class='col-1'>
+                        <div class='col-2'>
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h3> <span id='searchedCityName'></span>append city name with data as text context</h3>
-                                    <p>Temp: <span id='tempOfSearchedCity'></span></p>
-                                    <p>Wind: <span id='windOfSearchedCity'></span></p>
-                                    <p>Humidity: <span id='humidityOfSearchedCity'></span></p>
+                                    <h3> <span id='searchedCityName'></span>append city name with data as text context
+                                    </h3>
+                                    <p>Temp: <span id='tempOfSearchedCity'></span> F</p>
+                                    <p>Wind: <span id='windOfSearchedCity'></span> MPH</p>
+                                    <p>Humidity: <span id='humidityOfSearchedCity'></span> %</p>
                                     <p>UV Index: <span id='uvIndexOfSearchedCity'></span></p>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-                            <!--future forecast-->
-
-
-
                         </div>
                     </div>
+                    <div class="row">
+
+                        <!--Five Day future forecast-->
+                        
+                        <div class="col-2 offset-sm-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5> <span id='FiveDayForecastCityOne'></span>append date
+                                    </h5>
+                                    <p>Temp: <span id='FiveDayForecastOneTemp'></span> F</p>
+                                    <p>Wind: <span id='FiveDayForecastOneWind'></span> MPH</p>
+                                    <p>Humidity: <span id='FiveDayForecastOneHumidity'></span> %</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5> <span id='FiveDayForecastCityTwo'></span>append date
+                                    </h5>
+                                    <p>Temp: <span id='FiveDayForecastTwoTemp'></span> F</p>
+                                    <p>Wind: <span id='FiveDayForecastTwoWind'></span> MPH</p>
+                                    <p>Humidity: <span id='FiveDayForecastTwoHumidity'></span> %</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5> <span id='FiveDayForecastCityThree'></span>append date
+                                    </h5>
+                                    <p>Temp: <span id='FiveDayForecastThreeTemp'></span> F</p>
+                                    <p>Wind: <span id='FiveDayForecastThreeWind'></span> MPH</p>
+                                    <p>Humidity: <span id='FiveDayForecastThreeHumidity'></span> %</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5> <span id='FiveDayForecastCityFour'></span>append date
+                                    </h5>
+                                    <p>Temp: <span id='FiveDayForecastFourTemp'></span> F</p>
+                                    <p>Wind: <span id='FiveDayForecastFourWind'></span> MPH</p>
+                                    <p>Humidity: <span id='FiveDayForecastFourHumidity'></span> %</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5> <span id='FiveDayForecastCityFive'></span>append date
+                                    </h5>
+                                    <p>Temp: <span id='FiveDayForecastFiveTemp'></span> F</p>
+                                    <p>Wind: <span id='FiveDayForecastFiveWind'></span> MPH</p>
+                                    <p>Humidity: <span id='FiveDayForecastFiveHumidity'></span> %</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--future forecast-->
+
+
+
+                    </div>
                 </div>
+            </div>
 
-                <!--future forecast-->
+            <!--future forecast-->
 
 
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                    crossorigin="anonymous"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                    crossorigin="anonymous"></script>
-                <script src='script.js'></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            <script src='script.js'></script>
 </body>
 
 </html>

@@ -5,46 +5,58 @@ $("#searchBtn").on('click', function () {
   // grab the value of where the user inputs the city they're searching
   var cityInput = $('#cityInput').val()
   //  build url string + api call
-  var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
-
-    fetch(queryURL)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(data) {
-        console.log(data)
-
-        // render (put data on element)
-        renderWeather(data)
-
-
-      })
-    
-  // save local storage
-
-  function renderWeather(data) {
-    var userDisplay = document.querySelector('#userWeatherDisplay');
-    var weatherTitle = document.createElement('h1');
-    weatherTitle.textContent = data. 
-    userDisplay.appendChild(weatherTitle);
-
-
-
-
-  }
-
-
-  //on click event that saves history to local storage
-
-  $
-
-
-
-
-
+  var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
+  //var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${oneCallWeatherApiKey}`
   
 
-  console.log(queryURL)
+  fetch(longLatUrl) //longitude and latitude api
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      //fetch(oneCallApi) //weather to displayed api
+      //return response
+    })
+    //.then(function (response) {
+      //return response.json()
+    //})
+    //.then(function (data) {
+      //console.log(data)
+    //})
+
+  // render (put data on element)
+  //renderWeather(data)
+  //renderForecast(data)
 
 
 })
+
+// save local storage
+
+// grabbing span with id searchedCityname and appending data into it from api  
+function renderWeather(data) {
+  var temp = data.current.temp
+  var convertedTemp = (temp - 273.15) * (9 / 5) + 32
+  var userCityDisplay = document.querySelector('#searchedCityName');
+  userCityDisplay.textContent = data.
+    userCityDisplay.appendChild(userCityDisplay);
+
+
+
+
+}
+
+
+//on click event that saves history to local storage
+
+$
+
+
+
+
+
+
+
+
+
