@@ -15,16 +15,19 @@ $("#searchBtn").on('click', function () {
       return response.json();
     })
     .then(function (data) {
+      var lon = data.coord.lon
+      var lat = data.coord.lat
+
+     var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherDisplayKey}`
       console.log(data);
-      //fetch(oneCallApi) //weather to displayed api
-      //return response
+      fetch(oneCallApi) //weather to displayed api
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        console.log(data)
+      })
     })
-    //.then(function (response) {
-      //return response.json()
-    //})
-    //.then(function (data) {
-      //console.log(data)
-    //})
 
   // render (put data on element)
   //renderWeather(data)
