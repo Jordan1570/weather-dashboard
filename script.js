@@ -1,4 +1,5 @@
 var oneCallWeatherApiKey = '233ffcffa8f1bf8f0bb644310cc67c5a';
+var weatherDisplayKey = '013fa777140808cec57cca3ec4f1c8d8';
 
 //on click event listener that grabs value of city input
 $("#searchBtn").on('click', function () {
@@ -6,7 +7,7 @@ $("#searchBtn").on('click', function () {
   var cityInput = $('#cityInput').val()
   //  build url string + api call
   var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
-  //var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${oneCallWeatherApiKey}`
+  //var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherDisplayKey}`
   
 
   fetch(longLatUrl) //longitude and latitude api
