@@ -7,8 +7,8 @@ $("#searchBtn").on('click', function () {
   var cityInput = $('#cityInput').val()
   //  build url string + api call
   var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
-  //var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherDisplayKey}`
-  
+
+
 
   fetch(longLatUrl) //longitude and latitude api
     .then(function (response) {
@@ -18,15 +18,18 @@ $("#searchBtn").on('click', function () {
       var lon = data.coord.lon
       var lat = data.coord.lat
 
-     var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherDisplayKey}`
+      var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${weatherDisplayKey}`
       console.log(data);
       fetch(oneCallApi) //weather to displayed api
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        console.log(data)
-      })
+        .then(function (response) {
+          return response.json()
+        })
+        .then(function (data) {
+          console.log(data)
+
+          renderWeather(data);
+
+        })
     })
 
   // render (put data on element)
@@ -40,27 +43,43 @@ $("#searchBtn").on('click', function () {
 
 // grabbing span with id searchedCityname and appending data into it from api  
 function renderWeather(data) {
-  var temp = data.current.temp
-  var convertedTemp = (temp - 273.15) * (9 / 5) + 32
-  var userCityDisplay = document.querySelector('#searchedCityName');
-  userCityDisplay.textContent = data.
-    userCityDisplay.appendChild(userCityDisplay);
+    // displaying city name
+    var userCurrentCityDisp = document.getElementById('searchedCityName')
+    userCurrentCityDisp.textContent = data.name;
+
+    // displaying city temperature
+    var temp = data.current.temp
+    var convertedTemp = (temp - 273.15) * (9 / 5) + 32 // converting temp from kelvin to fahrenheit
+    var userCurrentCityTemp = document.getElementById('tempOfSearchedCity')
+    userCurrentCityTemp.textContent = convertedTemp.toFixed(2);
+
+    //displaying the current wind speed
+    var wind = document.getElementById('windOfSearchedCity')
+    wind.textContent = data.current.wind_speed;
+
+    //displaying current humidity
+    var humidity = document.getElementById('humidityOfSearchedCity')
+    humidity.textContent = data.current.humidity;
+
+    //displaying current uvi
+    var uV = document.getElementById('uvIndexOfSearchedCity')
+    uV.textContent = data.current.uvi;
+
+    // start of five day forecast
+
+    data.data.forEach(function (el, i) {
+      if (i > 4) return // only want to show first 5 days
+
+      var titleEl = document.getElementById(`forecast-title-${i}`)
 
 
+      var tempEl = document.getElementById(`temp-tag-${i}`)
+      tempEl.textContent = data.daily[0].temp.day;
 
+      var windEl = document.getElementById(`wind-tag-${i}`)
+      windEl.textContent = data.daily;
 
-}
-
-
-//on click event that saves history to local storage
-
-$
-
-
-
-
-
-
-
-
-
+      var humidityEl = document.getElementById(`humidity-tag-${i}`)
+      humidityEl.textContent = data.daily;
+    })
+  }

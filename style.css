@@ -3,3 +3,17 @@ h1 {
     background-color: blue;
     color: white;
 }
+
+.card {
+    background-color: blue;
+    color: white;
+}
+
+.currentDisplay {
+    background-color: white;
+    color: black;
+}
+
+.fiveDayCards {
+    display: flex;
+}
