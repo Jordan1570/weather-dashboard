@@ -15,6 +15,7 @@ $("#searchBtn").on('click', function () {
   // append cityInput variable into li on click 
 
   //  build url string + api call
+  
 
   var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
 
