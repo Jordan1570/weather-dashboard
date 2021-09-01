@@ -17,26 +17,35 @@
     <h1>Weather Dashboard</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4" id="searchColumn">
                 <h2>Search for a City:</h2>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control col-md-5" id="cityInput" aria-label="Default"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
                 <button type="button" class="btn btn-primary col-md-5" id='searchBtn'>Search</button>
-                <ul>
-
+                <ul class='history'>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
+                    <li class='historyBtn'></li>
                 </ul>
             </div>
+           
+                
 
-            <div class="col-sm-8 flexDisplay">
+            <div class="col-sm-8">
                 <!-- forecast -->
 
                 <div class='row'>
                     <!--current weather-->
                     <div class="card currentDisplay">
                         <div class="card-body">
-                            <h3> <span id='searchedCityName'></span>append city name with data as text context
+                            <h3> <span id='searchedCityName'></span> <span id='searchedCityDate'></span> <img id='searchedCityIcon'/>
                             </h3>
                             <p>Temp: <span id='tempOfSearchedCity'></span> F</p>
                             <p>Wind: <span id='windOfSearchedCity'></span> MPH</p>
@@ -46,16 +55,16 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row no-gutters">
 
                     <!--Five Day future forecast-->
 
-                    <div class="col-2 offset-sm-1">
+                    <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <h5> <span id='forecast-title-0'></span>append date
+                                <h5> <span id='forecast-title-0'></span>
                                 </h5>
-                                <img src>
+                                <img id=forecast-icon-0 src>
                                 <p>Temp: <span id='temp-tag-0'></span> F</p>
                                 <p>Wind: <span id='wind-tag-0'></span> MPH</p>
                                 <p>Humidity: <span id='humidity-tag-0'></span> %</p>
@@ -66,9 +75,9 @@
                     <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <h5> <span id='forecast-title-1'></span>append date
+                                <h5> <span id='forecast-title-1'></span>
                                 </h5>
-                                <img src>
+                                <img id='forecast-icon-1' src>
                                 <p>Temp: <span id='temp-tag-1'></span> F</p>
                                 <p>Wind: <span id='wind-tag-1'></span> MPH</p>
                                 <p>Humidity: <span id='humidity-tag-1'></span> %</p>
@@ -79,9 +88,9 @@
                     <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <h5> <span id='forecast-title-2'></span>append date
+                                <h5> <span id='forecast-title-2'></span>
                                 </h5>
-                                <img src>
+                                <img id='forecast-icon-2' src>
                                 <p>Temp: <span id='temp-tag-2'></span> F</p>
                                 <p>Wind: <span id='wind-tag-2'></span> MPH</p>
                                 <p>Humidity: <span id='humidity-tag-2'></span> %</p>
@@ -92,9 +101,9 @@
                     <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <h5> <span id='forecase-title-3'></span>append date
+                                <h5> <span id='forecast-title-3'></span>
                                 </h5>
-                                <img src>
+                                <img id='forecast-icon-3' src>
                                 <p>Temp: <span id='temp-tag-3'></span> F</p>
                                 <p>Wind: <span id='wind-tag-3'></span> MPH</p>
                                 <p>Humidity: <span id='humidity-tag-3'></span> %</p>
@@ -105,9 +114,9 @@
                     <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <h5> <span id='forecast-title-4'></span>append date
+                                <h5> <span id='forecast-title-4'></span>
                                 </h5>
-                                <img src>
+                                <img id='forecast-icon-4' src>
                                 <p>Temp: <span id='temp-tag-4'></span> F</p>
                                 <p>Wind: <span id='wind-tag-4'></span> MPH</p>
                                 <p>Humidity: <span id='humidity-tag-4'></span> %</p>
@@ -131,6 +140,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
                 integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
                 crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
