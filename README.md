@@ -12,8 +12,16 @@
 
 ## Usage
 
+https://github.com/Jordan1570/weather-dashboard
+
+https://jordan1570.github.io/weather-dashboard/
+
+
 - The landing page will simply ask you to search a city. 
 
 - After you press search, you will be presented with the current forecast, as well as the forecast for the next five days. 
 
 - The city you searched will be saved in your history right under your search button so incase you wanted to select a city you searched before, you can jusy click on the city in your history and the current forecast, as well as the next five days forecast will pop up. 
+
+![weather-dashboard](weather-dashboard.png
+)

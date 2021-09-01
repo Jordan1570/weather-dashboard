@@ -11,11 +11,11 @@ $("#searchBtn").on('click', function () {
   // creatle li inside ul - done 
 
   // grab value of city input (append cityInput variable)
-
+  
   // append cityInput variable into li on click 
 
   //  build url string + api call
-  
+
 
   var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
 
