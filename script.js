@@ -5,20 +5,29 @@ var weatherDisplayKey = '013fa777140808cec57cca3ec4f1c8d8';
 $("#searchBtn").on('click', function () {
   // grab the value of where the user inputs the city they're searching
   var cityInput = $('#cityInput').val()
+  
+  
+  // var historyCityEl = document.createElement('li')
+  // historyCityEl.textContent = (cityInput);
+  // historyCityEl.setAttribute('class', 'list-group-item', 'list-group-item-action');
+  // historyCityEl.setAttribute('id', 'searched-city');
+  // $('.history').prepend(historyCityEl);
 
   // create ul in html - done 
 
   // creatle li inside ul - done 
 
   // grab value of city input (append cityInput variable)
-  
-  // append cityInput variable into li on click 
+  var cityInput = $('#cityInput').val()
+
+  var historyCityEl = document.createElement('li')
+  historyCityEl.textContent = (cityInput.charAt(0).toUpperCase()+cityInput.slice(1));
+  historyCityEl.setAttribute('class', 'list-group-item', 'list-group-item-action', 'col-sm-4');
+  historyCityEl.setAttribute('id', 'searched-city');
+  $('.history').prepend(historyCityEl);
 
   //  build url string + api call
-
-
   var longLatUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${oneCallWeatherApiKey}`
-
 
 
   fetch(longLatUrl) //longitude and latitude api
@@ -120,9 +129,12 @@ function renderWeather(data) {
 }
 
 // on click for cities displayed in the history
-$("historyBtn").on('click', function () {
+$(".list-group-item").on('click', function () {
+  renderWeather()
 
 })
+
+
 
 
 
